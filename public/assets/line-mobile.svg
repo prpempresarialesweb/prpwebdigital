@@ -1,0 +1,17 @@
+<svg width="360" height="884" viewBox="0 0 360 884" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_33_352" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="884">
+<rect width="360" height="884" fill="#696776"/>
+</mask>
+<g mask="url(#mask0_33_352)">
+<g opacity="0.1">
+<line y1="-0.5" x2="2007.54" y2="-0.5" transform="matrix(0.542194 0.840254 -0.888458 0.458957 -532.025 -250.479)" stroke="black"/>
+<line y1="-0.5" x2="2007.54" y2="-0.5" transform="matrix(0.542194 0.840254 -0.888458 0.458957 -255.718 -393.214)" stroke="black"/>
+<line y1="-0.5" x2="2007.54" y2="-0.5" transform="matrix(0.542194 0.840254 -0.888458 0.458957 20.5918 -535.948)" stroke="black"/>
+<line y1="-0.5" x2="2007.54" y2="-0.5" transform="matrix(0.542194 0.840254 -0.888458 0.458957 296.898 -678.683)" stroke="black"/>
+<line y1="-0.5" x2="1633.94" y2="-0.5" transform="matrix(0.888458 -0.458957 0.542194 0.840254 -398.29 270.792)" stroke="black"/>
+<line y1="-0.5" x2="1633.94" y2="-0.5" transform="matrix(0.888458 -0.458957 0.542194 0.840254 -165.378 631.743)" stroke="black"/>
+<line y1="-0.5" x2="1633.94" y2="-0.5" transform="matrix(0.888458 -0.458957 0.542194 0.840254 67.5347 992.695)" stroke="black"/>
+<line y1="-0.5" x2="1633.94" y2="-0.5" transform="matrix(0.888458 -0.458957 0.542194 0.840254 300.447 1353.65)" stroke="black"/>
+</g>
+</g>
+</svg>
