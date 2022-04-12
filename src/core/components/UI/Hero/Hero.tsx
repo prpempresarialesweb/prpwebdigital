@@ -38,71 +38,71 @@ const Hero = ({ data }: any) => {
 				<Space h={60} />
 				<Grid justify='center' align='center' gutter={0}>
 					<Grid.Col xs={12} md={6}>
-						<motion.div ref={ref} initial={initial} transition={transition} animate={animation}>
-							<Group
-								position={sm ? 'left' : 'center'}
-								direction='column'
-								spacing='xl'
+						{/*<motion.div ref={ref} initial={initial} transition={transition} animate={animation}>*/}
+						<Group
+							position={sm ? 'left' : 'center'}
+							direction='column'
+							spacing='xl'
+							sx={(theme) => ({
+								maxWidth: 520,
+								margin: '0 auto',
+								[theme.fn.largerThan('md')]: {
+									maxWidth: 420,
+									margin: '0',
+								},
+							})}>
+							<Badge variant='dot' color='violet'>
+								05 DE MAYO - PRP Coaching
+							</Badge>
+							<Title
+								align={sm ? 'left' : 'center'}
 								sx={(theme) => ({
-									maxWidth: 520,
-									margin: '0 auto',
 									[theme.fn.largerThan('md')]: {
-										maxWidth: 420,
-										margin: '0',
+										fontSize: 63,
+										lineHeight: '62px',
+										letterSpacing: '-4px',
 									},
+									fontWeight: 600,
+									letterSpacing: '-3px',
+									color: theme.colors.brand[9],
+									fontSize: 50,
+									lineHeight: '49px',
+								})}
+								order={1}>
+								{data.title}
+								{/*Construye <Box sx={(theme) => ({ color: theme.colors.brand[6], display: 'inline-flex' })}>empresas</Box> saludables.*/}
+							</Title>
+							<Text
+								align={sm ? 'left' : 'center'}
+								size='lg'
+								sx={(theme) => ({
+									[theme.fn.largerThan('md')]: {
+										fontSize: 20,
+										//lineHeight: '25px',
+									},
+									color: theme.colors.brand[9],
+									opacity: 0.75,
+									lineHeight: '24px',
 								})}>
-								<Badge variant='dot' color='violet'>
-									05 DE MAYO - PRP Coaching
-								</Badge>
-								<Title
-									align={sm ? 'left' : 'center'}
-									sx={(theme) => ({
-										[theme.fn.largerThan('md')]: {
-											fontSize: 63,
-											lineHeight: '62px',
-											letterSpacing: '-4px',
-										},
-										fontWeight: 600,
-										letterSpacing: '-3px',
-										color: theme.colors.brand[9],
-										fontSize: 50,
-										lineHeight: '49px',
-									})}
-									order={1}>
-									{data.title}
-									{/*Construye <Box sx={(theme) => ({ color: theme.colors.brand[6], display: 'inline-flex' })}>empresas</Box> saludables.*/}
-								</Title>
-								<Text
-									align={sm ? 'left' : 'center'}
-									size='lg'
-									sx={(theme) => ({
-										[theme.fn.largerThan('md')]: {
-											fontSize: 20,
-											//lineHeight: '25px',
-										},
-										color: theme.colors.brand[9],
-										opacity: 0.75,
-										lineHeight: '24px',
-									})}>
-									{data.description}
-								</Text>
+								{data.description}
+							</Text>
 
-								<Button
-									target='_blank'
-									href={data.buttonLink}
-									component='a'
-									color='primary'
-									sx={{
-										fontSize: 16,
-										fontWeight: 500,
-										minWidth: 160,
-									}}
-									radius='md'
-									size='lg'>
-									{data.buttonText}
-								</Button>
-							</Group>
-						</motion.div>
+							<Button
+								target='_blank'
+								href={data.buttonLink}
+								component='a'
+								color='primary'
+								sx={{
+									fontSize: 16,
+									fontWeight: 500,
+									minWidth: 160,
+								}}
+								radius='md'
+								size='lg'>
+								{data.buttonText}
+							</Button>
+						</Group>
+						{/*</motion.div>*/}
 					</Grid.Col>
 					<Grid.Col md={6} xs={12}>
 						<Space
@@ -144,7 +144,6 @@ const Hero = ({ data }: any) => {
 
 				<Space h={30} />
 				<LogoCloud />
-
 				<Space h={30} />
 			</Container>
 		</motion.div>
