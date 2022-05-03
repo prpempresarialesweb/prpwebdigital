@@ -49,6 +49,19 @@ const useStyles = createStyles((theme) => ({
 		//paddingLeft: 54,
 		paddingTop: theme.spacing.sm,
 	},
+	title: {
+		margin: '0 auto',
+		color: '#25014B',
+		[theme.fn.largerThan('xs')]: {
+			fontSize: 44,
+			maxWidth: 500,
+		},
+		maxWidth: 350,
+		fontWeight: 700,
+		letterSpacing: -1.5,
+		fontSize: 40,
+		lineHeight: 1.1,
+	},
 }))
 
 interface CommentSimpleProps {
@@ -68,88 +81,43 @@ const Comments = ({ data }: any) => {
 	const { classes } = useStyles()
 	const sm = useMediaQuery('(min-width: 576px)')
 	return (
-		<Box
-			sx={(theme) => ({
-				background: 'linear-gradient(179.75deg, #FEFDFE 0.23%, #FCFAFE 99.79%)',
-			})}>
-			<BackgroundImage
-				sx={(theme) => ({
-					[theme.fn.largerThan('md')]: {
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-					},
-					backgroundSize: 'contain',
-					backgroundPosition: 'top',
-					backgroundRepeat: 'no-repeat',
-				})}
-				src={sm ? '/assets/line.svg' : '/assets/line-mobile.svg'}>
-				<Container size={1000}>
-					<Space h={60} />
-					<motion.div ref={ref} initial={initial} transition={transition} animate={animation}>
-						<Title
-							align='center'
-							sx={(theme) => ({
-								[theme.fn.largerThan('md')]: {
-									fontSize: 44,
-								},
-
-								fontWeight: 300,
-								letterSpacing: -1.5,
-								color: theme.colors.brand[9],
-								fontSize: 32,
-								lineHeight: 1.1,
-							})}
-							order={3}>
-							Lo que dicen los
-							<Box
-								ml={8}
-								sx={{
-									display: 'inline-block',
-									textAlign: 'center',
-									margin: '0 auto',
-									//width: '20%',
-									fontWeight: 500,
-									background: 'linear-gradient(84.38deg, #FF8A00 -1.14%, #AD00FF 57.87%)',
-									backgroundClip: 'text',
-									textFillColor: 'transparent',
-									WebkitBackgroundClip: 'text',
-									WebkitTextFillColor: 'transparent',
-								}}>
-								expertos.
-							</Box>
-						</Title>
-					</motion.div>
-					<Space h={40} />
-					<Grid justify='center'>
-						{data.map((item: any) => (
-							<Grid.Col xs={12} md={6} key={item.id}>
-								<motion.div ref={refComment} initial={initial} transition={{ delay: 0.1, duration: 0.3 }} animate={animation}>
-									<Paper radius='md' withBorder p='md'>
-										<Group>
-											<Avatar alt={item.author.name} radius='xl'>
-												{/*eslint-disable-next-line jsx-a11y/alt-text*/}
-												<Image data={item.author.picture.responsiveImage} />
-											</Avatar>
-											<div>
-												<Text size='sm'>{item.author.name}</Text>
-												<Text size='xs' color='dimmed'>
-													{item.title}
-												</Text>
-											</div>
-										</Group>
-										<Spoiler maxHeight={100} showLabel='Leer más' hideLabel='Ocultar'>
-											<Text className={classes.body} size='sm'>
-												{item.comment}
+		<Box>
+			<Container size='lg'>
+				<Space h={sm ? 130 : 80} />
+				<motion.div ref={ref} initial={initial} transition={transition} animate={animation}>
+					<Title align='center' className={classes.title} order={3}>
+						Lo que dicen los expertos
+					</Title>
+				</motion.div>
+				<Space h={50} />
+				<Grid justify='center'>
+					{data.map((item: any) => (
+						<Grid.Col xs={12} md={6} key={item.id}>
+							<motion.div ref={refComment} initial={initial} transition={{ delay: 0.1, duration: 0.3 }} animate={animation}>
+								<Paper radius='md' withBorder p='md'>
+									<Group>
+										<Avatar alt={item.author.name} radius='xl'>
+											{/*eslint-disable-next-line jsx-a11y/alt-text*/}
+											<Image data={item.author.picture.responsiveImage} />
+										</Avatar>
+										<div>
+											<Text size='sm'>{item.author.name}</Text>
+											<Text size='xs' color='dimmed'>
+												{item.title}
 											</Text>
-										</Spoiler>
-									</Paper>
-								</motion.div>
-							</Grid.Col>
-						))}
-					</Grid>
-					<Space h={80} />
-				</Container>
-			</BackgroundImage>
+										</div>
+									</Group>
+									<Spoiler maxHeight={100} showLabel='Leer más' hideLabel='Ocultar'>
+										<Text className={classes.body} size='sm'>
+											{item.comment}
+										</Text>
+									</Spoiler>
+								</Paper>
+							</motion.div>
+						</Grid.Col>
+					))}
+				</Grid>
+			</Container>
 		</Box>
 	)
 }

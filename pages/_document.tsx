@@ -16,9 +16,7 @@ export default class _Document extends Document {
 					<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#8c00ff' />
 					<meta name='msapplication-TileColor' content='#ffffff' />
 					<meta name='theme-color' content='#ffffff' />
-					{/*<link rel='preconnect' href='https://fonts.googleapis.com' />
-					<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />*/}
-					<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet' />
+					<link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap' rel='stylesheet' />
 				</Head>
 				<body>
 					<Main />

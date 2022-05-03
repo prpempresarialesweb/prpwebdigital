@@ -30,7 +30,7 @@ class ChatwootWidget extends React.Component {
 			g.async = !0
 			g.onload = function () {
 				window.chatwootSDK.run({
-					websiteToken: 'nGwr9ns2esSVbTNWtn7EoVKX',
+					websiteToken: 'qFbP2ZsPHvFg9zHaLNVcCfS2',
 					baseUrl: BASE_URL,
 				})
 			}
