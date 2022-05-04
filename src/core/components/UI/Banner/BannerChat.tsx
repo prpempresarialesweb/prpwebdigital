@@ -75,17 +75,17 @@ export function BannerChat() {
 				<Group spacing='sm'>
 					<Group direction='column' spacing='xs'>
 						<Text color='white' size='md'>
-							1. Pagos de Inscripcion en moneda nacional (Venezuela)
+							1. Pagos de Inscripción en moneda nacional (Venezuela)
 						</Text>
 						<Text color='white' size='md'>
 							2. Preguntas frecuentes
 						</Text>
 						<Text color='white' size='md'>
-							3. Consulta sobre proximas fechas
+							3. Consulta sobre próximas fechas
 						</Text>
 					</Group>
 					<Text color='white' size='xs'>
-						Respondemos todas tus dudas atraves de nuestro chat en tiempo real, en todas las plaformas digitales.
+						Respondemos todas tus dudas a través de nuestro chat en tiempo real, en todas las plataformas digitales.
 					</Text>
 					<Space h='md' />
 					<Button

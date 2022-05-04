@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }))
 
-const Product = ({ data }: any) => {
+const Product = ({ data, features }: any) => {
 	const motionFeature = useRef()
 	const motionFeatureCard = useRef()
 	const { ref, initial, transition, animation } = useMotion(motionFeature)
@@ -51,6 +51,7 @@ const Product = ({ data }: any) => {
 	const { classes, cx } = useStyles()
 	return (
 		<Box
+			id='product'
 			sx={(theme) => ({
 				background: '#1C1524',
 			})}>
@@ -93,7 +94,10 @@ const Product = ({ data }: any) => {
 							<Grid.Col key={product.id} sm={2} xs={6}>
 								<motion.div ref={refcard} initial={initial} transition={{ delay: 0.4, duration: 0.3 }} animate={animation}>
 									<Box sx={{ position: 'relative' }}>
-										<Box target='_blank' href={product.gumroadProductLink} component='a'>
+										<Box
+											target={product.gumroadProductLink ? '_blank' : '_self'}
+											href={product.gumroadProductLink ? product.gumroadProductLink : '#product'}
+											component='a'>
 											{product.date ? (
 												<Box className={classes.cardContent} p='md'>
 													<Button
@@ -134,7 +138,7 @@ const Product = ({ data }: any) => {
 						</Grid.Col>
 					</Grid>
 					<Space h={70} />
-					<ProductFeature />
+					<ProductFeature data={features} />
 					<Space h={80} />
 				</Container>
 			</BackgroundImage>

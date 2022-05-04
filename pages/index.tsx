@@ -33,6 +33,19 @@ const HomeSeoQuery = gql`
 				}
 			}
 		}
+		allFeatures(filter: { page: { eq: "4537906" } }, first: "3", orderBy: _createdAt_ASC) {
+			id
+			title
+			description
+			buttonText
+			buttonLink
+			reverseRow
+			image {
+				responsiveImage(imgixParams: { fm: jpg, fit: crop, w: 484, h: 484, q: 100 }) {
+					...responsiveImageFragment
+				}
+			}
+		}
 
 		allComments {
 			id
@@ -69,6 +82,17 @@ const HomeSeoQuery = gql`
 				}
 			}
 		}
+
+		allProductFeatures(filter: { page: { eq: "4537906" } }) {
+			id
+			title
+			description
+			icon {
+				responsiveImage(imgixParams: { fm: png, fit: crop, w: 32, h: 32, q: 100 }) {
+					...responsiveImageFragment
+				}
+			}
+		}
 	}
 	${responsiveImageFragment}
 	${metaTagsFragment}
@@ -92,10 +116,8 @@ const Home = ({ data }: any) => {
 			<ClientOnly>
 				<Hero data={data.hero} />
 				<LogoCloud />
-				<Product data={data.allProducts} />
-				<Features data={data.hero} reverse />
-				<Features data={data.hero} />
-				<Features data={data.hero} reverse />
+				<Product data={data.allProducts} features={data.allProductFeatures} />
+				<Features data={data.allFeatures} />
 				<Comments data={data.allComments} />
 			</ClientOnly>
 		</>
