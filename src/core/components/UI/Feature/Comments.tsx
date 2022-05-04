@@ -53,13 +53,13 @@ const useStyles = createStyles((theme) => ({
 		margin: '0 auto',
 		color: '#25014B',
 		[theme.fn.largerThan('xs')]: {
-			fontSize: 44,
+			fontSize: 36,
 			maxWidth: 500,
 		},
 		maxWidth: 350,
 		fontWeight: 700,
 		letterSpacing: -1.5,
-		fontSize: 40,
+		fontSize: 30,
 		lineHeight: 1.1,
 	},
 }))

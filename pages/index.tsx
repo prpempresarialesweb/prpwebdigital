@@ -109,7 +109,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home = ({ data }: any) => {
-	console.log(data)
 	return (
 		<>
 			<Head>{renderMetaTags(data.home.seo)}</Head>

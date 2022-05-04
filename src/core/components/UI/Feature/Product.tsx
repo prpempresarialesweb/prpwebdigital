@@ -137,7 +137,7 @@ const Product = ({ data, features }: any) => {
 							<BannerChat />
 						</Grid.Col>
 					</Grid>
-					<Space h={70} />
+					<Space h={40} />
 					<ProductFeature data={features} />
 					<Space h={80} />
 				</Container>

@@ -7,6 +7,8 @@ import { Image } from 'react-datocms'
 import useMotion from 'src/core/hooks/useMotion'
 
 const useStyles = createStyles((theme) => ({
+	grid: {},
+
 	image: {
 		//mixBlendMode: 'screen',
 		borderRadius: theme.radius.md,
@@ -17,13 +19,13 @@ const useStyles = createStyles((theme) => ({
 	title: {
 		color: '#25014B',
 		[theme.fn.largerThan('xs')]: {
-			fontSize: 44,
+			fontSize: 36,
 			maxWidth: 500,
 		},
 		maxWidth: 350,
 		fontWeight: 700,
 		letterSpacing: -1.5,
-		fontSize: 40,
+		fontSize: 30,
 		lineHeight: 1.1,
 	},
 	description: {
@@ -42,19 +44,23 @@ const Features = ({ data }: any) => {
 	const motionHero = useRef()
 	const { ref, initial, transition, animation } = useMotion(motionHero)
 
-	console.log('data from fe', data)
-
 	return (
 		<>
 			{data.map((item: any) => (
 				<Box key={item.id}>
 					<Container size='lg'>
-						<Space h={sm ? 130 : 80} />
-						<Grid justify='space-between' align='center' gutter={0} sx={{ flexDirection: item.reverseRow ? 'row-reverse' : 'row' }}>
+						<Space h={sm ? 130 : 60} />
+						<Grid
+							justify='space-between'
+							align='center'
+							gutter={0}
+							sx={(theme) => ({
+								flexDirection: item.reverseRow ? 'row-reverse' : 'row',
+							})}>
 							<Grid.Col xs={12} md={6}>
 								<Group
 									direction='column'
-									spacing={sm ? 32 : 'md'}
+									spacing={'md'}
 									sx={(theme) => ({
 										[theme.fn.largerThan('xs')]: {
 											maxWidth: 550,
@@ -100,18 +106,17 @@ const Features = ({ data }: any) => {
 										},
 									})}
 								/>
-								<motion.div ref={ref} initial={initial} transition={{ delay: 0.1, duration: 0.3 }} animate={animation}>
-									<Box
-										className={classes.wrapperImage}
-										sx={(theme) => ({
-											textAlign: 'center',
-										})}>
-										<Box target='_blank' href={data.buttonLink} component='a'>
-											{/*eslint-disable-next-line jsx-a11y/alt-text*/}
-											<Image style={{ maxWidth: 900, margin: '0 auto' }} className={classes.image} data={item.image.responsiveImage} />
-										</Box>
+
+								<Box
+									className={classes.wrapperImage}
+									sx={(theme) => ({
+										textAlign: 'center',
+									})}>
+									<Box target='_blank' href={data.buttonLink} component='a'>
+										{/*eslint-disable-next-line jsx-a11y/alt-text*/}
+										<Image style={{ maxWidth: 900, margin: '0 auto' }} className={classes.image} data={item.image.responsiveImage} />
 									</Box>
-								</motion.div>
+								</Box>
 							</Grid.Col>
 						</Grid>
 					</Container>

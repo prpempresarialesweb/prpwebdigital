@@ -60,8 +60,6 @@ const LayoutPublic = ({ children }: LayoutAppProps) => {
 		threshold: 0.9,
 	})
 
-	console.log('observer?.isIntersecting ? ', observer?.isIntersecting)
-
 	return (
 		<>
 			<ChatwootWidget />

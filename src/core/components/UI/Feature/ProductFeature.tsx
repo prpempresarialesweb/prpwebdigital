@@ -7,7 +7,7 @@ export function ProductFeature({ data }: any) {
 	return (
 		<Grid gutter={'xl'}>
 			{data.map((item: any) => (
-				<Grid.Col key={item.id} lg={4} mt={60}>
+				<Grid.Col key={item.id} lg={4} mt={30}>
 					<Box>
 						{/*eslint-disable-next-line jsx-a11y/alt-text*/}
 						<Image data={item.icon.responsiveImage} />
